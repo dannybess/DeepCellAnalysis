@@ -1,0 +1,22 @@
+function plot_small_cell(f,i)
+close all
+% f=load('feature_0_frame_0_19-Jul-2018_CONTOURS_pill_MESH.mat');
+width = [];
+length = [];
+frames = f.cells(i).frame;
+obids = f.cells(i).object;
+ for i = 1:numel(frames)
+    c = f.frame(frames(i)).object(obids(i));
+    width = [ width c.cell_width];
+    length = [ length c.cell_length];
+    subplot(1,2,1)
+    plot(c.Xcont, c.Ycont);
+    axis equal
+    hold on;
+    subplot(1,2,2)
+    yyaxis left
+    plot(
+    yyaxis right
+
+ end
+end
